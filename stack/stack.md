@@ -23,4 +23,6 @@ In programming terms, putting an item on top of the stack is called push and rem
 5. On pushing an element, we increase `pointer` and place the new element in the position pointed to `pointer`.
 6. On popping an element, we return the element pointed to by TOP and reduce its value.
 
+### Stack Time Complexity
 
+For the array-based implementation of a stack, the push and pop operations take constant time, i.e. `O(1)`.
