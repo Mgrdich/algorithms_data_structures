@@ -4,7 +4,7 @@ Python List already have them implemented in it
 
 
 class Queue:
-    def __init__(self, size):
+    def __init__(self, size=0):
         self.queue = []
         self.size = size
 
@@ -32,4 +32,22 @@ class Queue:
         return self.queue[0]
 
 
+que = Queue(3)
+print(que.isEmpty())
 
+que.enqueue(1)
+que.enqueue(2)
+que.enqueue(3)
+try:
+    que.enqueue(5)
+except:
+    print('Full Queue')
+
+print(que.peek())
+print(que.isFull())
+print(que.dequeue())
+que.dequeue()
+que.dequeue()
+que.dequeue()
+
+print(que.queue)
