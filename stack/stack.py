@@ -1,3 +1,7 @@
+"""
+Python List already have them implemented in it
+"""
+
 class Stack:
     def __init__(self):
         self.stack = []
