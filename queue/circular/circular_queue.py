@@ -32,3 +32,17 @@ class CircularQueue:
             temp = self.queue[self.head]
             self.head = (self.head + 1) % self.size
             return temp
+
+
+# remember the pointer is what we care about
+queue = CircularQueue(5)
+queue.enqueue(1)
+queue.enqueue(2)
+queue.enqueue(3)
+print(queue.queue)
+queue.dequeue()
+
+queue.enqueue(2)
+queue.enqueue(3)
+queue.enqueue(4)
+print(queue.queue)
