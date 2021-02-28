@@ -46,3 +46,15 @@ queue.enqueue(2)
 queue.enqueue(3)
 queue.enqueue(4)
 print(queue.queue)
+
+try:
+    queue.enqueue(44)
+except:
+    print('Full')
+
+queue1 = CircularQueue(2)
+
+try:
+    queue1.dequeue()
+except:
+    print('Empty')
