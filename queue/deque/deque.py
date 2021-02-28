@@ -34,3 +34,50 @@ class Deque:
 
     def isEmpty(self):
         return not len(self.queue)
+
+
+d = Deque(5)
+print(d.isEmpty())
+d.addRear(8)
+d.addRear(5)
+d.addFront(7)
+d.addFront(10)
+d.addFront(10)
+try:
+    d.addFront(5)
+except:
+    print('Full Queue')
+
+try:
+    d.addRear(5)
+except:
+    print('Full Queue')
+
+print(d.isEmpty())
+print(d.isFull())
+print(d.queue)
+d.removeFront()
+d.addRear(11)
+print(d.removeRear())
+print(d.removeFront())
+d.addFront(55)
+d.addRear(45)
+print(d.queue)
+
+d.removeRear()
+d.removeRear()
+d.removeRear()
+d.removeRear()
+d.removeRear()
+
+print(d.queue)
+
+try:
+    d.removeRear()
+except:
+    print('Empty Queue')
+
+try:
+    d.removeFront()
+except:
+    print('Empty Queue')
