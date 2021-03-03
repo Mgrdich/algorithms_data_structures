@@ -66,7 +66,7 @@ The power of a linked list comes from the ability to break the chain and rejoin 
 Doing something similar in an array would have required shifting the positions of all the subsequent elements.
 
 
-### Time Complexcity
+### Time Complexity
 
 |  | Worst Case | Average case |
 | --| -----------| ------------ |
