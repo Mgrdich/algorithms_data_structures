@@ -37,7 +37,7 @@ class LinkedList:
         new_node.next = node.next
         node.next = new_node
 
-    def deletingNode(self, position):
+    def deleteNode(self, position):
         if self.head is None:
             return
 
@@ -62,5 +62,26 @@ class LinkedList:
 
         # since you arrive one steps before
         nextNode = temp_node.next.next
-        temp_node.next = None
+        temp_node.next = None  # free memory
         temp_node.next = nextNode
+
+    def printList(self):
+        temp_node = self.head
+        while temp_node:
+            print(str(temp_node.item) + " ", end="")
+            temp_node = temp_node.next
+
+
+llist = LinkedList()
+llist.insertAtEnd(1)
+llist.insertAtBeginning(2)
+llist.insertAtBeginning(3)
+llist.insertAtEnd(4)
+llist.insertAfterNode(llist.head.next, 5)
+
+print('Linked list:')
+llist.printList()
+
+print("\nAfter deleting an element:")
+llist.deleteNode(3)
+llist.printList()
