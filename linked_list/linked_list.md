@@ -76,4 +76,66 @@ Doing something similar in an array would have required shifting the positions o
 
 
 
+## Operations
+
+### Traverse a Linked List
+Displaying the contents of a linked list is very simple. We keep moving the temp node to the next one and display its contents.
+When temp is NULL, we know that we have reached the end of the linked list so we get out of the while loop.
+
+```c
+struct node *temp = head;
+printf("\n\nList elements are - \n");
+while(temp != NULL)
+{
+     printf("%d --->",temp->data);
+     temp = temp->next;
+}
+```
+
+
+### Insert and Element
+
+You can add elements to either the beginning, middle or end of the linked list.
+
+
+#### Insert at the beginning
+
+* Allocate memory for new node
+* Store data
+* Change next of new node to point to head
+* Change head to point to recently created node
+
+
+#### Insert at the End
+
+* Allocate memory for new node
+* Store data
+* Traverse to last node
+* Change next of last node to recently created node
+
+
+#### Insert at the Middle
+
+* Allocate memory and store data for new node
+* Traverse to node just before the required position of new node
+* Change next pointers to include new node in between
+
+
+### Delete from a Linked List
+
+#### Delete from beginning
+
+* Point head to the second node
+
+
+#### Delete from end
+
+* Traverse to second last element
+* Change its next pointer to null
+
+
+### Delete from middle
+
+* Traverse to element before the element to be deleted
+* Change next pointers to exclude the node from the chain
 
