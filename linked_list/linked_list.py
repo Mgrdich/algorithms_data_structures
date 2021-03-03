@@ -30,7 +30,7 @@ class LinkedList:
 
     @staticmethod
     def insertAfterNode(node, data):
-        if node is None:  # todo maybe check node instance
+        if node is None and not isinstance(node, Node):
             raise Exception('Not a Valid Node')
 
         new_node = Node(data)
