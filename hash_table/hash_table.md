@@ -72,22 +72,23 @@ The problem with linear probing is that a cluster of adjacent slots is filled. W
 
 It works similar to linear probing but the spacing between the slots is increased (greater than one) by using the following relation.
 
-`h(k, i) = (h′(k) + c1i + c2i2) mod m`
+$h(k, i) = (h^′(k) + c_1i + c_2i^2) \mod m$
 
 where,
 
 `c1` and `c2` are positive auxiliary constants,
-`i = {0, 1, ….}`
+$i = {0, 1, ….}$
 
 ### Double hashing
 
 If a collision occurs after applying a hash function h(k), then another hash function is calculated for finding the next slot.
 
-`h(k, i) = (h1(k) + ih2(k)) mod m`
+$h(k, i) = (h_1(k) + ih_2(k)) \mod m$
 
 
 
 ## Ways to Create a good hash functions
+
 
 
 A good hash function may not prevent the collisions completely however it can reduce the number of collisions.
@@ -98,11 +99,21 @@ Here, we will look into different methods to find a good hash function
 
 ### Division Method
 
-If k is a key and m is the size of the hash table, the hash function h() is calculated as:
+If `k` is a key and `m` is the size of the hash table, the hash function `h()` is calculated as:
 
-`h(k) = k mod m`
+$h(k) = k \mod m$
 
 For example, If the size of a hash table is `10` and `k = 112` then `h(k) = 112 mod 10 = 2`. The value of `m` must not be the powers of `2`. This is because the powers of `2` in binary format are `10, 100, 1000, ….` When we find `k mod m`, we will always get the lower order `p-bits`.
+
+
+Generally, this approach is quite good for just about any value of M. However, in certain situations some extra care is needed in the selection of a suitable value for `m`.
+For example, it is often convenient to make `m`an even number. But this means that h(x) is even if x is even; and `h(x)` is odd if `x` is odd. If all possible keys are equiprobable, 
+then this is not a problem. However if, say, even keys are more likely than odd keys, the function tex2html_wrap_inline62256 will not spread the hashed values of those keys evenly.
+
+
+For these reasons `M` is often chosen to be a prime number.
+For example, suppose there is a bias in the way the keys are created that makes it more likely for a key to be a multiple of some small constant, say two or three. 
+Then making `M` a prime increases the likelihood that those keys are spread out evenly. Also, if `M` is a prime number, the division of `x` by that prime number depends on all the bits of x, not just the bottom k bits, for some small constant `k`. 
 
 ```
 if m = 22, k = 17, then h(k) = 17 mod 22 = 10001 mod 100 = 01
@@ -112,10 +123,9 @@ if m = 2p, then h(k) = p lower bits of m
 ```
 
 
+### Multiplication Method
 
-2. Multiplication Method
-
-h(k) = ⌊m(kA mod 1)⌋
+$h(k) = ⌊m(kA  \mod 1 )⌋$
 
 where,
 
@@ -123,7 +133,9 @@ where,
 `⌊ ⌋` gives the floor value
  `A` is any constant. The value of `A` lies between `0` and `1`. But, an optimal choice will `be ≈ (√5-1)/2` suggested by Knuth.
 
+
 ### Universal Hashing
+
 
 In Universal hashing, the hash function is chosen at random independent of keys.
 
