@@ -10,7 +10,7 @@ class Queue:
 
     def enqueue(self, element):
         if len(self.queue) == self.size:
-            raise Exception('Queue is Full')
+            raise Exception("Queue is Full")
 
         self.queue.append(element)
 
@@ -32,6 +32,9 @@ class Queue:
         return self.queue[0]
 
 
+# TODO can be moved to py test files
+
+
 que = Queue(3)
 print(que.isEmpty())
 
@@ -41,7 +44,7 @@ que.enqueue(3)
 try:
     que.enqueue(5)
 except:
-    print('Full Queue')
+    print("Full Queue")
 
 print(que.peek())
 print(que.isFull())

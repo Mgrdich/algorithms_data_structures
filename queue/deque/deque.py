@@ -10,23 +10,23 @@ class Deque:
 
     def addRear(self, item):
         if self.isFull():
-            raise Exception('Queue is Full')
+            raise Exception("Queue is Full")
         self.queue.append(item)
 
     def addFront(self, item):
         if self.isFull():
-            raise Exception('Queue is Full')
+            raise Exception("Queue is Full")
 
         self.queue.insert(0, item)
 
     def removeFront(self):
         if self.isEmpty():
-            raise Exception('Queue is Empty')
+            raise Exception("Queue is Empty")
         return self.queue.pop()
 
     def removeRear(self):
         if self.isEmpty():
-            raise Exception('Queue is Empty')
+            raise Exception("Queue is Empty")
         return self.queue.pop(0)
 
     def isFull(self):
@@ -35,6 +35,8 @@ class Deque:
     def isEmpty(self):
         return not len(self.queue)
 
+
+# TODO can be moved to py test files
 
 d = Deque(5)
 print(d.isEmpty())
@@ -46,12 +48,12 @@ d.addFront(10)
 try:
     d.addFront(5)
 except:
-    print('Full Queue')
+    print("Full Queue")
 
 try:
     d.addRear(5)
 except:
-    print('Full Queue')
+    print("Full Queue")
 
 print(d.isEmpty())
 print(d.isFull())
@@ -75,9 +77,9 @@ print(d.queue)
 try:
     d.removeRear()
 except:
-    print('Empty Queue')
+    print("Empty Queue")
 
 try:
     d.removeFront()
 except:
-    print('Empty Queue')
+    print("Empty Queue")

@@ -2,11 +2,12 @@
 Python List already have them implemented in it
 """
 
+
 class Stack:
     def __init__(self):
         self.stack = []
 
-    def isEmpty(self):
+    def isEmpty(self) -> bool:
         return len(self.stack) == 0
 
     def push(self, item):
@@ -15,19 +16,22 @@ class Stack:
 
     def pop(self):
         if self.isEmpty():
-            raise Exception('Stack is Empty')
+            raise Exception("Stack is Empty")
 
         return self.stack.pop()
 
     def peek(self):
         if self.isEmpty():
-            raise Exception('Stack is Empty')
+            raise Exception("Stack is Empty")
 
         return self.stack[len(self.stack) - 1]
 
 
+# TODO can be moved to py test files
+
 st = Stack()
 st.push(1)
+
 st.push(2)
 st.push(3)
 print(st.peek())

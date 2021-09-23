@@ -2,11 +2,8 @@ import math
 
 
 class Lib:
-    def __init__(self):
-        return
-
     """
-        Checks a number whether it is prime or not
+    Checks a number whether it is prime or not
     """
 
     @staticmethod
@@ -24,6 +21,7 @@ class Lib:
     """
         Gets the next prime after a given parameter
     """
+
     @staticmethod
     def getPrime(n: int) -> int:
         if n % 2 == 0:

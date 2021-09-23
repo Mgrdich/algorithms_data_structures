@@ -31,7 +31,7 @@ class LinkedList:
     @staticmethod
     def insertAfterNode(node, data):
         if node is None and not isinstance(node, Node):
-            raise Exception('Not a Valid Node')
+            raise Exception("Not a Valid Node")
 
         new_node = Node(data)
         new_node.next = node.next
@@ -72,6 +72,7 @@ class LinkedList:
             temp_node = temp_node.next
 
 
+# TODO can be moved to py test files
 llist = LinkedList()
 llist.insertAtEnd(1)
 llist.insertAtBeginning(2)
@@ -79,7 +80,7 @@ llist.insertAtBeginning(3)
 llist.insertAtEnd(4)
 llist.insertAfterNode(llist.head.next, 5)
 
-print('Linked list:')
+print("Linked list:")
 llist.printList()
 
 print("\nAfter deleting an element:")

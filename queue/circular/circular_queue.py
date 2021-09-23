@@ -11,7 +11,7 @@ class CircularQueue:
 
     def enqueue(self, element):
         if (self.tail + 1) % self.size == self.head:
-            raise Exception('The Circular Queue is full')
+            raise Exception("The Circular Queue is full")
         elif self.head == -1:  # initial empty case
             self.head = 0
             self.tail = 0
@@ -22,7 +22,7 @@ class CircularQueue:
 
     def dequeue(self):
         if self.head == -1:
-            raise Exception('The Circular Queue is Empty')
+            raise Exception("The Circular Queue is Empty")
         elif self.head == self.tail:
             temp = self.queue[self.tail]
             self.head = -1
@@ -32,6 +32,9 @@ class CircularQueue:
             temp = self.queue[self.head]
             self.head = (self.head + 1) % self.size
             return temp
+
+
+# TODO can be moved to py test files
 
 
 # remember the pointer is what we care about
@@ -50,11 +53,11 @@ print(queue.queue)
 try:
     queue.enqueue(44)
 except:
-    print('Full')
+    print("Full")
 
 queue1 = CircularQueue(2)
 
 try:
     queue1.dequeue()
 except:
-    print('Empty')
+    print("Empty")
